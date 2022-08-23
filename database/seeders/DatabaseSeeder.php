@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\{Category, User, Post};
+use Illuminate\Database\QueryException;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +16,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $user = User::factory()->create([
+            'name' => 'Jonathan Zed',
+            'username' => 'jonathanzed'
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        try {
+            Post::factory(10)->create([
+                'user_id' => $user->id
+            ]);
+        } catch (QueryException $e) {
+
+        }
     }
 }
