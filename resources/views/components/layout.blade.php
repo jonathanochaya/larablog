@@ -4,7 +4,7 @@
 <link href="/css/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
+<script src="/js/alpine.min.js" defer></script>
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-8">
         <nav class="md:flex md:justify-between md:items-center">
@@ -40,12 +40,11 @@
                             </label>
 
                             <input id="email" type="text" placeholder="Your email address"
-                                   class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none">
+                                class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none">
                         </div>
 
                         <button type="submit"
-                                class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8"
-                        >
+                            class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
                             Subscribe
                         </button>
                     </form>
