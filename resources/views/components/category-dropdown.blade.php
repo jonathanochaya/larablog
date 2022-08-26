@@ -16,7 +16,7 @@
 
     @foreach ($categories as $category)
         <x-dropdown-item
-            href="?category={{ $category->slug }}"
+            href="?category={{ $category->slug }}&{{ http_build_query(request()->except('category', 'page')) }}"
             class="{{ isset($currentCategory) && $currentCategory->is($category)? 'bg-blue-500 text-white': '' }}">{{ ucwords($category->name) }}</x-dropdown-item>
     @endforeach
 </x-dropdown>

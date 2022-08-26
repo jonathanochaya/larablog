@@ -28,6 +28,6 @@ class PostController extends Controller
     {
         return Post::with('category', 'author')
             ->orderBy('updated_at', 'desc')
-            ->filter(request(['search', 'category', 'author']))->get();
+            ->filter(request(['search', 'category', 'author']))->paginate(6)->withQueryString();
     }
 }

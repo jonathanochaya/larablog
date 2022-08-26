@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         try {
-            Post::factory(10)->create([
+            Post::factory(35)->create([
                 'user_id' => $user->id
             ]);
         } catch (QueryException $e) {
