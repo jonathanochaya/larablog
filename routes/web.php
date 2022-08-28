@@ -31,3 +31,6 @@ Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout');
 
 Route::post('newsletter', NewsletterController::class)->name('newsletter');
+
+Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('admin')->name('newpost');
+Route::post('admin/posts', [PostController::class, 'store'])->middleware('admin')->name('savepost');
