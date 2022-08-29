@@ -28,7 +28,7 @@
                             <button class="text-xs font-bold uppercase">Welcome Back - {{ auth()->user()->name }}</button>
                         </x-slot>
 
-                        <x-dropdown-item href="{{ @route('newpost') }}">Dashboard</x-dropdown-item>
+                        <x-dropdown-item href="{{ @route('adminposts') }}">Dashboard</x-dropdown-item>
                         <x-dropdown-item href="{{ @route('newpost') }}">New Post</x-dropdown-item>
 
                         <x-dropdown-item>

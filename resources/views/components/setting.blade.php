@@ -9,7 +9,7 @@
 
             <ul>
                 <li>
-                    <a href="#" class="{{ request()->is('dashboard')? 'text-blue-500 font-semibold': '' }}">Dashboard</a>
+                    <a href="{{ @route('adminposts') }}" class="{{ request()->routeIs('adminposts')? 'text-blue-500 font-semibold': '' }}">All Posts</a>
                 </li>
                 <li>
                     <a href="{{ @route('newpost') }}" class="{{ request()->routeIs('newpost')? 'text-blue-500 font-semibold': '' }}">New Post</a>
