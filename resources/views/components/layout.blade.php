@@ -28,8 +28,10 @@
                             <button class="text-xs font-bold uppercase">Welcome Back - {{ auth()->user()->name }}</button>
                         </x-slot>
 
-                        <x-dropdown-item href="{{ @route('adminposts') }}">Dashboard</x-dropdown-item>
-                        <x-dropdown-item href="{{ @route('newpost') }}">New Post</x-dropdown-item>
+                        @can('admin')
+                            <x-dropdown-item href="{{ @route('adminposts') }}">Dashboard</x-dropdown-item>
+                            <x-dropdown-item href="{{ @route('newpost') }}">New Post</x-dropdown-item>
+                        @endcan
 
                         <x-dropdown-item>
                             <form action="{{ @route('logout') }}" method="post">

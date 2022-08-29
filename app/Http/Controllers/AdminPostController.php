@@ -22,7 +22,7 @@ class AdminPostController extends Controller
 
     public function store(Request $request)
     {
-        $attributes = $this->validatePost();
+        $attributes = $this->validatePost(null);
 
         $attributes['user_id'] = auth()->id();
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails', 'public');
