@@ -23,13 +23,23 @@
 
             <div class="mt-8 md:mt-0 flex items-center">
                 @auth
-                    <span class="font-bold">Welcome Back - {{ auth()->user()->name }}</span>
+                    <x-dropdown>
+                        <x-slot name='trigger'>
+                            <button class="text-xs font-bold uppercase">Welcome Back - {{ auth()->user()->name }}</button>
+                        </x-slot>
 
-                    <form action="{{ @route('logout') }}" method="post" class="text-sm font-semibold text-blue-500 ml-5">
-                        @csrf
+                        <x-dropdown-item href="{{ @route('newpost') }}">Dashboard</x-dropdown-item>
+                        <x-dropdown-item href="{{ @route('newpost') }}">New Post</x-dropdown-item>
 
-                        <button>Log Out</button>
-                    </form>
+                        <x-dropdown-item>
+                            <form action="{{ @route('logout') }}" method="post">
+                                @csrf
+
+                                <button>Log Out</button>
+                            </form>
+                        </x-dropdown-item>
+                    </x-dropdown>
+
                 @else
                     <a href="{{ @route('register') }}" class="text-xs font-bold uppercase">Register</a>
                     <a href="{{ @route('login') }}" class="ml-6 mr-1 text-xs font-bold uppercase">Log In</a>
